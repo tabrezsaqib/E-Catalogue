@@ -1,0 +1,58 @@
+.loginContainer {
+  display: grid;
+  grid-auto-rows: 15vh 1fr;
+  padding: 1.5rem;
+  gap: 1rem;
+  align-items: start;
+}
+
+.logo {
+  place-self: center;
+}
+
+.formContainer {
+  position: relative;
+  display: grid;
+  padding: 1.5rem;
+  gap: 1.5rem;
+  border-radius: 10px;
+  width: min(98%, 400px);
+  place-items: center;
+  place-self: center;
+}
+
+.formContainer > * {
+  width: 100%;
+}
+
+@media (min-width: 40em) and (max-width: 60em) {
+  .loginContainer {
+    padding: 0;
+    gap: 1rem;
+  }
+
+  .formContainer {
+    padding: 2rem;
+    gap: 2rem;
+    min-height: 400px;
+  }
+}
+
+@media (min-width: 60em) {
+  .loginContainer {
+    padding: 0;
+    gap: 1rem;
+  }
+
+  .formContainer {
+    padding: 2rem;
+    gap: 2rem;
+    min-height: 400px;
+  }
+}
+
+/* utility classes */
+
+.fsHeading {
+  font-size: var(--fs-800);
+}

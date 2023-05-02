@@ -1,0 +1,281 @@
+.showCard {
+  display: grid;
+  position: relative;
+  gap: 0.5rem;
+  z-index: 0;
+}
+
+.thumbnailContainer {
+  position: relative;
+  height: 120px;
+  overflow: hidden;
+  border-radius: 8px;
+  z-index: 0;
+}
+
+/* .thumbnailContainer:hover:not(.trendingCard)::after {
+    content: "";
+    position: absolute;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+      center / 10% no-repeat;
+    inset: 0;
+    cursor: pointer;
+  } */
+
+.thumbnail {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  transition: transform 0.2s ease-out;
+}
+
+.thumbnailContainer:hover .thumbnail {
+  transform: scale(1.05);
+  mask-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+}
+
+.thumbnailContainer:hover .textWrapper {
+  opacity: 1;
+  z-index: 5;
+}
+
+/* .infoContainer {
+    position: absolute;
+    bottom: -30px;
+  }
+  
+  .thumbnail:hover::after,
+  .thumbnail:focus-visible:after {
+    content: "";
+    position: absolute;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+      center / 10% no-repeat url(/assets/icon-play.svg);
+    inset: 0;
+  } */
+
+/* .thumbnail:hover::after {
+    content: "";
+    background-image: url(/assets/image-avatar.png);
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    z-index: 10;
+  } */
+
+/* .thumbnailContainer:hover::after {
+    content: "";
+    position: absolute;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+      center / 10% no-repeat url(/assets/icon-play.svg);
+    inset: 0;
+    bottom: 30px;
+    z-index: -1;
+    cursor: pointer;
+  } */
+
+.showCard:only-child {
+  max-width: 160px;
+}
+
+.showCard:only-child .thumbnail {
+  height: 120px;
+}
+
+.playButton {
+  position: absolute;
+  background-color: transparent;
+  inset: 0;
+}
+
+.textWrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--fs-m-body);
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 100vmax;
+  padding: 0.25rem 0.5rem;
+  color: white;
+  opacity: 0;
+  cursor: pointer;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.textWrapper > svg {
+  width: 20px;
+  height: 20px;
+}
+
+.bookmarkButton {
+  position: absolute;
+  padding: 0.5rem;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 100vmax;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+}
+
+.bookmarkButton:hover {
+  cursor: pointer;
+  filter: invert();
+}
+
+.infoContainer > p {
+  display: inline-flex;
+  opacity: 0.75;
+  gap: 0.5rem;
+}
+
+.inlineSpan {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.categoryIcon {
+  fill: #fff;
+}
+
+/* trending card css properties */
+
+/* .trendingCard.showCard:hover::after,
+  .trendingCard.showCard:focus-visible:after {
+    content: "";
+    position: absolute;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+      center / 10% no-repeat;
+    mask-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3));
+    inset: 0;
+    z-index: 1;
+    cursor: pointer;
+  } */
+
+.trendingCard.showCard:hover .thumbnail {
+  transform: scale(1.05);
+  mask-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+}
+
+.trendingCard.showCard:hover .textWrapper {
+  opacity: 1;
+  z-index: 5;
+}
+
+.trendingCard.thumbnail {
+  position: absolute;
+  height: 140px;
+  mask-image: linear-gradient(rgba(0, 0, 0, 1) 30%, transparent 115%);
+}
+
+.trendingCard.thumbnailContainer {
+  height: 140px;
+}
+
+.trendingCard.infoContainer {
+  position: absolute;
+  top: 80px;
+  left: 20px;
+}
+
+/* .trendingCard.thumbnail:hover::after,
+  .trendingCard.thumbnail:focus-visible:after {
+    content: "";
+    position: absolute;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+      center / 10% no-repeat url(/assets/icon-play.svg);
+    inset: 0;
+    z-index: 3;
+    cursor: pointer;
+  } */
+
+@media (min-width: 40em) and (max-width: 60em) {
+  .thumbnail {
+    height: 160px;
+  }
+
+  .thumbnailContainer {
+    height: 160px;
+  }
+
+  .showCard:only-child {
+    max-width: 220px;
+  }
+
+  .showCard:only-child .thumbnail {
+    height: 120px;
+  }
+
+  .trendingCard.thumbnail {
+    height: 230px;
+  }
+
+  .trendingCard.thumbnailContainer {
+    height: 230px;
+  }
+
+  .bookmarkButton {
+    top: 20px;
+    right: 20px;
+  }
+
+  .trendingCard.infoContainer {
+    top: 150px;
+    left: 35px;
+  }
+
+  .textWrapper {
+    gap: 0.75rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .textWrapper > svg {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media (min-width: 60em) {
+  .thumbnail {
+    height: 200px;
+  }
+
+  .thumbnailContainer {
+    height: 200px;
+  }
+
+  .showCard:only-child {
+    max-width: 330px;
+  }
+
+  .showCard:only-child .thumbnail {
+    height: 200px;
+  }
+
+  .trendingCard.thumbnail {
+    height: 230px;
+  }
+
+  .trendingCard.thumbnailContainer {
+    height: 230px;
+  }
+
+  .bookmarkButton {
+    top: 20px;
+    right: 20px;
+  }
+
+  .trendingCard.infoContainer {
+    top: 150px;
+    left: 35px;
+  }
+
+  .textWrapper {
+    gap: 0.75rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .textWrapper > svg {
+    width: 30px;
+    height: 30px;
+  }
+}

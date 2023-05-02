@@ -1,0 +1,123 @@
+.inputFieldContainer {
+  position: relative;
+}
+
+.inputField {
+  width: 100%;
+  padding-inline: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--clr-primary-200);
+}
+
+.inputField:focus {
+  outline: none;
+  border-bottom: 1px solid var(--clr-neutral-100);
+  caret-color: var(--clr-accent);
+}
+
+.errorField {
+  border-bottom: 1px solid var(--clr-accent);
+}
+
+.errorMessage {
+  position: absolute;
+  top: 5px;
+  right: 0;
+}
+
+.submitButton {
+  margin-top: 0.5rem;
+  background-color: var(--clr-accent);
+  color: var(--clr-neutral-100);
+  padding-block: 1rem;
+  border-radius: 6px;
+}
+
+.submitButton:hover {
+  background-color: var(--clr-neutral-100);
+  color: var(--clr-neutral-900);
+  cursor: pointer;
+}
+
+.para {
+  text-align: center;
+}
+
+.fsInput {
+  font-size: var(--fs-350);
+}
+
+.fsError {
+  font-size: var(--fs-100);
+}
+
+@media (min-width: 40em) and (max-width: 60em) {
+  .fsError {
+    font-size: var(--fs-200);
+  }
+}
+
+@media (min-width: 60em) {
+  .fsError {
+    font-size: var(--fs-200);
+  }
+}
+
+.loginContainer {
+  display: grid;
+  grid-auto-rows: 15vh 1fr;
+  padding: 1.5rem;
+  gap: 1rem;
+  align-items: start;
+}
+
+.logo {
+  place-self: center;
+}
+
+.formContainer {
+  position: relative;
+  display: grid;
+  padding: 1.5rem;
+  gap: 1.5rem;
+  border-radius: 10px;
+  width: min(98%, 400px);
+  place-items: center;
+  place-self: center;
+}
+
+.formContainer > * {
+  width: 100%;
+}
+
+@media (min-width: 40em) and (max-width: 60em) {
+  .loginContainer {
+    padding: 0;
+    gap: 1rem;
+  }
+
+  .formContainer {
+    padding: 2rem;
+    gap: 2rem;
+    min-height: 400px;
+  }
+}
+
+@media (min-width: 60em) {
+  .loginContainer {
+    padding: 0;
+    gap: 1rem;
+  }
+
+  .formContainer {
+    padding: 2rem;
+    gap: 2rem;
+    min-height: 400px;
+  }
+}
+
+/* utility classes */
+
+.fsHeading {
+  font-size: var(--fs-800);
+}

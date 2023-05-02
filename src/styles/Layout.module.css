@@ -1,0 +1,27 @@
+.layoutContainer {
+  display: grid;
+  grid-template-areas: "navBar" "searchBar" "showList";
+  max-width: 100vw;
+  padding-block: 0 2.5rem;
+  gap: 1rem;
+}
+
+@media (min-width: 40em) and (max-width: 60em) {
+  .layoutContainer {
+    padding-inline: 1.5rem;
+    padding-block: 1.5rem 3rem;
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 60em) {
+  .layoutContainer {
+    grid-template-areas: "navBar searchBar" "navBar showList";
+    grid-auto-columns: 6rem 1fr;
+    grid-auto-rows: 3rem 1fr;
+    row-gap: 1.5rem;
+    column-gap: 3rem;
+    padding-inline: 2rem;
+    padding-block: 2rem 3rem;
+  }
+}
